@@ -1,4 +1,6 @@
+#Librarys
 import math
+
 # Functions
 
 def again():
@@ -59,16 +61,25 @@ def division(a, b):
         print(a / b)
         again()
 
+def exponents(a, b):
+    answer=str(input("How do you want your answer"))
+    answer=answer.replace(" ", "")
+    if answer.lower()=='absolutevalue':
+        print(f"Your answer is {abs(a**b)}")
+        again()
+
+
 
 def aritmithic():
-    a = int(input("So, what is the first number?"))
-    b = int(input("Ok, what is the second number?"))
+    a = int(input("So, what is the first number? (Base of the exponent)? "))
+    b = int(input("Ok, what is the second number? (exponent of the exponents)? "))
     print("The following will be the choices of arithmetic operations you can perform")
     print("1. Addition")
     print("2. Subtraction")
     print("3. Multiplication")
     print("4. Division")
-    operation = int(input("Which of the 4 choices of operation would you like to perform on these numbers? "))
+    print("5. Exponents")
+    operation = int(input("Which of the 5 choices of operation would you like to perform on these numbers? "))
 
     if operation == 1:
         add(a, b)
@@ -78,6 +89,8 @@ def aritmithic():
         multiply(a, b)
     elif operation == 4:
         division(a, b)
+    elif operation == 5:
+        exponents(a,b)
     else:
         print("Please enter a valid option")
         print("Please renter your numbers")
@@ -105,7 +118,7 @@ def area():
         area()
 
 def perimeter():
-    shape=str(input("What shape is the problem ex.Square, triangle, circle, etc."))
+    shape=str(input("What shape is the problem? ex.Square, triangle, circle, etc. "))
     shape=shape.replace(" ","")
     if shape.lower()=="square" or shape.lower()=="rectangle" or shape.lower()=="parallelogram":
         side1=int(input("What is one side of the quadrilateral? "))
@@ -128,18 +141,13 @@ def perimeter():
 
 
 def define():
-    print("Hi, I am an AI Calculator who can calculate extreme numbers. Feel free to enter any number you like!")
-    global name
-    name=str(input("Whats your name? "))
-    print(f"Hi {name}!")
-    print("By the way, I cannot calculate variables, only constants")
-    print("I would also like to mention that everything must be spelled correctly or I am no use to you")
+    
     print("The following will be the choices of mathematics you can perform")
     print("Enter only the numbers associated with")
     print("1. Aritmitic/Basic Operations")
     print("2. Area")
     print("3. Perimeter")
-    definer=int(input("Which area of mathematics would you like to choose"))
+    definer=int(input("Which area of mathematics would you like to choose? "))
     if definer==1:
         aritmithic()
     elif definer==2:
@@ -147,4 +155,9 @@ def define():
     elif definer==3:
         perimeter() 
 # START
+print("Hi, I am an AI Calculator who can calculate extreme numbers. Feel free to enter any number you like!")
+name=str(input("Whats your name? "))
+print(f"Hi {name}!")
+print("By the way, I cannot calculate variables, only constants")
+print("I would also like to mention that everything must be spelled correctly or I am no use to you")
 define()
