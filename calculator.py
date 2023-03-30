@@ -1,10 +1,11 @@
 #Librarys
 import math
+import fractions
 
 # Functions
 
 def again():
-    another = str(input("Have another calculation?"))
+    another = str(input("Have another calculation? "))
     another=another.replace(" ","")
     if another.lower() == 'yes':
         define()
@@ -13,7 +14,7 @@ def again():
 
 
 def add(a, b):
-    answer = str(input("How do you want your answer?"))
+    answer = str(input("How do you want your answer? "))
     answer=answer.replace(" ","")
     if answer.lower() == "absolutevalue":
         print("Your answer is ", abs(a + b))
@@ -35,10 +36,13 @@ def subtract(a, b):
 
 
 def multiply(a, b):
-    answer = str(input("How do you want your answer?"))
+    answer = str(input("How do you want your answer? "))
     answer=answer.replace(" ","")
     if answer.lower() == "absolutevalue":
         print("Your answer is ", abs(a * b))
+        again()
+    elif answer.lower()=='fraction' or answer.lower()=='fractions':
+        print("Your answer is: ", fractions.Fraction(a*b).limit_denominator(100))
         again()
     else:
         print(a * b)
@@ -46,7 +50,7 @@ def multiply(a, b):
 
 
 def division(a, b):
-    answer = str(input("How do you want your answer?"))
+    answer = str(input("How do you want your answer? "))
     answer=answer.replace(" ","")
     if answer.lower() == "absolutevalue":
         print("Your answer is ", abs(a / b))
@@ -57,22 +61,36 @@ def division(a, b):
     elif answer.lower() == "integer":
         print("Your answer is ", (a // b))
         again()
+    elif answer.lower()=='fraction' or answer.lower()=='fractions':
+        print("Your answer is: ", fractions.Fraction(a/b).limit_denominator(100))
+        again()
     else:
         print(a / b)
         again()
 
 def exponents(a, b):
-    answer=str(input("How do you want your answer"))
+    answer=str(input("How do you want your answer? "))
     answer=answer.replace(" ", "")
+    result=a**b
     if answer.lower()=='absolutevalue':
-        print(f"Your answer is {abs(a**b)}")
+        print(f"Your answer is {abs(result)}")
+        again()
+    elif answer.lower()=="percentage" or answer.lower()=="percent" and b<0:
+        print("Your answer is: ", result, "%")
+    elif answer.lower()=='fraction' or answer.lower()=='fractions':
+        print("Your answer is: ", fractions.Fraction(result).limit_denominator(100))
+        again()
+    else: 
+        print(f"Your answer is: {result}")
         again()
 
 
 
 def aritmithic():
-    a = int(input("So, what is the first number? (Base of the exponent)? "))
-    b = int(input("Ok, what is the second number? (exponent of the exponents)? "))
+    a = str(input("So, what is the first number? (Base of the exponent)? "))
+    b = str(input("Ok, what is the second number? (exponent of the exponents)? "))
+    a=fractions.Fraction(a)
+    b=fractions.Fraction(b)
     print("The following will be the choices of arithmetic operations you can perform")
     print("1. Addition")
     print("2. Subtraction")
@@ -125,6 +143,7 @@ def perimeter():
         side2=int(input("What is the second side of the quadrilateral? "))
         peri=2*(side1+side2)
         print(f"The perimeter of the quadrilateral is {peri}")
+        
     elif shape.lower()=='triangle':
         side1=int(input("What is the length of the first side? "))
         side2=int(input("What is the length of the second side? "))
@@ -132,8 +151,11 @@ def perimeter():
         peri=side1+side2+side3
         print(f"The perimeter of the triangle is {peri}")
     elif shape.lower()=="circle":
-        radius=int(input("What is the radius of the circle? "))
+        radius=str(input("What is the radius of the circle? "))
+        radius=fractions.Fraction(radius)
         peri=2*math.pi*radius
+        answer= input("How do you want your answer? ")
+        answer=answer.replace(" ","")
         print(f"The perimeter of the circle is {peri}")
     else:
         print("You did not enter a valid shape!")
@@ -161,3 +183,21 @@ print(f"Hi {name}!")
 print("By the way, I cannot calculate variables, only constants")
 print("I would also like to mention that everything must be spelled correctly or I am no use to you")
 define()
+while (True):
+    try: KeyboardInterrupt
+    
+    except:
+        print("1 - Horrible")
+        print("2 - Bad")
+        print("3 - Okay")
+        print("4 - Good")
+        print("5. Excellent")
+        rate = int(input("How well do you rate this calculator on a scale of 1-5"))
+        if rate<=5 and rate == 1 or rate == 2 and rate>=0:
+            input("Why do you rate this calculator so low? ")
+        elif rate<=5 and rate == 3 and rate >=0:
+            input("What can I do to improve your rating? ")
+        elif rate<=5 and rate>=0 and rate>=4:
+            input("Anything I can do to improve the calculator in the future? ")
+        else:
+            print("Please enter a positive rating that is greater than 0 and less than 6")
