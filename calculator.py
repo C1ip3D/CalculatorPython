@@ -342,6 +342,46 @@ def code():
         elif answer == 'temperature' or answer == 'temperatures':
             temp()
 
+    def geo():
+        what = str("What would you like to do in the geometry section? ")
+        what = what.replace(" ","")
+        what = what.lower()
+
+        if what == 'pythagoras' or what == 'pythagoreantheorem' or what == 'pythagorean':
+            missing = str(input("What is the missing side of the right triangle? If none, type no"))
+            missing = missing.replace(" ","")
+            missing = missing.lower()
+            if missing == "no" or missing == 'none':
+                a = int(input("Which side is A in the right triangle? "))
+                b = int(input("Which side is B in the right triangle? "))
+                c = int(input("Which side is C in the right triangle? "))
+                ab=a**2+b**2
+                if ab==c**2:
+                   print("TRUE, the triangle is a right triangle!")
+                else:
+                    print("FALSE, the triangle is not a right triangle!")
+            elif missing == 'a' or missing == "A":
+                b = int(input("Which side is B in the right triangle? "))
+                c = int(input("Which side is C in the right triangle? "))
+                a= math.sqrt(c**2-b**2)
+                print(f"Side a is {a}")
+                again()
+            elif missing == 'b' or missing == "B":
+                a = int(input("Which side is A in the right triangle? "))
+                c = int(input("Which side is C in the right triangle? "))
+                b= math.sqrt(c**2-a**2)
+                print(f"Side b is {b}")
+                again()
+            elif missing == 'c' or missing == "C":
+                b = int(input("Which side is B in the right triangle? "))
+                a = int(input("Which side is A in the right triangle? "))
+                c= math.sqrt(a**2+b**2)
+                print(f"Side a is {c}")
+                again()
+            else: 
+                print("Don't play with me! ")
+                geo()
+ 
     def define():
         
         print("The following will be the choices of mathematics you can perform")
@@ -350,6 +390,7 @@ def code():
         print("2 - Area")
         print("3 - Perimeter")
         print("4 - Conversions")
+        print("5 - Geometry")
         definer=int(input("Which area of mathematics would you like to choose? "))
         if definer==1:
             aritmithic()
@@ -359,9 +400,16 @@ def code():
             perimeter() 
         elif definer==4:
             conv()
+        elif definer==5:
+            geo()
+        else:
+            print("Enter a valid number")
+            define()
 
     # START
     print("Hi, I am an AI Calculator who can calculate extreme numbers. Feel free to enter any number you like!")
+    print("By the way, I cannot calculate variables, only constants")
+    print("I would also like to mention that everything must be spelled correctly or I am no use to you")
     name=str(input("Whats your name? "))
     print(f"Hi {name}!")
     print("By the way, I cannot calculate variables, only constants")
