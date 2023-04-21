@@ -11,7 +11,7 @@ def code():
         another = input("Have another calculation? ")
         another = another.replace(" ", "").lower()
 
-        if another == 'yes':
+        if another == 'yes' or another == 'y':
             define()
         else:
             pass
@@ -19,6 +19,8 @@ def code():
     def add(a, b):
         answer = input("How do you want your answer? ")
         answer = answer.replace(" ", "").lower()
+        a = fractions.Fraction(a)
+        b = fractions.Fraction(b)
 
         if answer == "absolutevalue":
             print("Your answer is ", abs(a + b))
@@ -33,6 +35,8 @@ def code():
     def subtract(a, b):
         answer = input("How do you want your answer?")
         answer = answer.replace(" ", "").lower()
+        a = fractions.Fraction(a)
+        b = fractions.Fraction(b)
         if answer == "absolutevalue":
             print("Your answer is ", abs(a - b))
             again()
@@ -46,6 +50,8 @@ def code():
     def multiply(a, b):
         answer = input("How do you want your answer? ")
         answer = answer.replace(" ", "").lower()
+        a = fractions.Fraction(a)
+        b = fractions.Fraction(b)
         if answer == "absolutevalue":
             print("Your answer is ", abs(a * b))
             again()
@@ -63,6 +69,8 @@ def code():
     def division(a, b):
         answer = input("How do you want your answer? ")
         answer = answer.replace(" ", "").lower()
+        a = fractions.Fraction(a)
+        b = fractions.Fraction(b)
         if answer == "absolutevalue":
             print("Your answer is ", abs(a / b))
             again()
@@ -86,6 +94,8 @@ def code():
     def exponents(a, b):
         answer = str(input("How do you want your answer? "))
         answer = answer.replace(" ", "")
+        a = fractions.Fraction(a)
+        b = fractions.Fraction(b)
         result = a**b
         if answer.lower() == 'absolutevalue':
             print(f"Your answer is {abs(result)}")
@@ -103,19 +113,77 @@ def code():
             print(f"Your answer is: {result}")
             again()
 
-    def aritmithic():
-        a = str(input("So, what is the first number? (Base of the exponent)? "))
-        b = str(input("Ok, what is the second number? (exponent of the exponent)? "))
+    def sqrt(a):
+        answer = str(input("How do you want your answer? "))
+        answer = answer.replace(" ", "")
         a = fractions.Fraction(a)
         b = fractions.Fraction(b)
+        result = math.sqrt(a)
+        if answer.lower() == 'absolutevalue':
+            print(f"Your answer is {abs(result)}")
+            again()
+        elif answer.lower() == 'fraction' or answer.lower() == 'fractions':
+            print("Your answer is: ", fractions.Fraction(
+                result).limit_denominator(100))
+            again()
+        elif answer.lower() == 'round' or answer.lower() == 'rounded':
+            print("Your answer is: ", round(result))
+            again()
+        else:
+            print(f"Your answer is: {result}")
+            again()
+
+    def log(a, b):
+        answer = str(input("How do you want your answer? "))
+        answer = answer.replace(" ", "")
+        a = fractions.Fraction(a)
+        b = fractions.Fraction(b)
+        result = math.log(a, b)
+        if answer.lower() == 'absolutevalue':
+            print(f"Your answer is {abs(result)}")
+            again()
+        elif answer.lower() == 'fraction' or answer.lower() == 'fractions':
+            print("Your answer is: ", fractions.Fraction(
+                result).limit_denominator(100))
+            again()
+        elif answer.lower() == 'round' or answer.lower() == 'rounded':
+            print("Your answer is: ", round(result))
+            again()
+        else:
+            print(f"Your answer is: {result}")
+            again()
+
+    def fact(a):
+        answer = str(input("How do you want your answer? "))
+        answer = answer.replace(" ", "")
+        result = math.factorial(a)
+        if answer.lower() == 'absolutevalue':
+            print(f"Your answer is {abs(result)}")
+            again()
+        elif answer.lower() == 'fraction' or answer.lower() == 'fractions':
+            print("Your answer is: ", fractions.Fraction(
+                result).limit_denominator(100))
+            again()
+        elif answer.lower() == 'round' or answer.lower() == 'rounded':
+            print("Your answer is: ", round(result))
+            again()
+        else:
+            print(f"Your answer is: {result}")
+            again()
+
+    def aritmithic():
+        a = int(input("So, what is the first number? (base of the exponent, radicand, argument of logarithm, factorial number)? "))
+        b = int(input("Ok, what is the second number? (exponent of the exponent, base of logarithm)? "))
         print("The following will be the choices of arithmetic operations you can perform")
         print("1. Addition")
         print("2. Subtraction")
         print("3. Multiplication")
         print("4. Division")
         print("5. Exponents")
-        operation = input(
-            "Which of the 5 choices of operation would you like to perform on these numbers? ")
+        print("6. Square Root")
+        print("7. Logarithm")
+        print("8. Factorials")
+        operation = int(input("Which of the 5 choices of operation would you like to perform on these numbers? "))
 
         if operation == 1:
             add(a, b)
@@ -127,6 +195,12 @@ def code():
             division(a, b)
         elif operation == 5:
             exponents(a, b)
+        elif operation == 6:
+            sqrt(a)
+        elif operation == 7:
+            log(a, b)
+        elif operation == 8:
+            fact(a)
         else:
             print("Please enter a valid option")
             print("Please renter your numbers")
@@ -381,7 +455,19 @@ def code():
         what = input("What would you like to do in the geometry section? ")
         what = what.replace(" ", "").lower()
 
-        if what == 'pythagoras' or what == 'pythagoreantheorem' or what == 'pythagorean':
+        if what == 'sine':
+            x=float(input("What is the number? "))
+            print(f"The answer is {math.sin(x)}")
+
+        elif what == 'cosine':
+            x=float(input("What is the number? "))
+            print(f"The answer is {math.cos(x)}")
+
+        elif what =='tangent':
+            x=float(input("What is the number? "))
+            print(f"The answer is {math.tan(x)}")
+
+        elif what == 'pythagoras' or what == 'pythagoreantheorem' or what == 'pythagorean':
             missing = input(
                 "What is the missing side of the right triangle? If none, type no ")
             missing = missing.replace(" ", "").lower()

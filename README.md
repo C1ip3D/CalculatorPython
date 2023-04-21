@@ -1,5 +1,5 @@
 A calculator using python
-Python version of JS calculator that is being created right now!
+With new functions coming every alternating week
 
 How to use:
 	Download python from python.org
