@@ -171,6 +171,88 @@ def code():
             print(f"Your answer is: {result}")
             again()
 
+    def comp():
+            print("Numbers should be in ordered pair form -1,0")
+            realPart1 = float(input("What is the real part of the first number? "))
+            imgPart1 = float(input("What is the imaginary part of the first number? "))
+            realPart2 = float(input("What is the real part of the second number? "))
+            imgPart2 = float(input("What is the imaginary part of the second number? "))
+            complex1 = complex(realPart1, imgPart1)
+            complex2 = complex(realPart2, imgPart2)
+
+            def sum():
+                res = complex1 + complex2
+                print("The answer is ", res)
+                again()
+
+            def subtract():
+                res = complex1 - complex2
+                print("The answer is ", res)
+                again()
+
+            def product():
+                res = complex1 * complex2
+                print("The answer is ", res)
+                again()
+
+            def divide():
+                res = complex1 / complex2
+                print("The answer is ", res)
+                again()
+
+            def con():
+                define = input("Which number do you want the conjugate for? 1 or 2 ")
+                if define == "firstnumber" or define == "1":
+                    print(f"The conjugate of {complex1} is {complex1.conjugate()}")
+                    again()
+                elif define == "secondnumber" or define == "2":
+                    print(f"The conjugate of {complex2} is {complex2.conjugate()}")
+                    again()
+                else:
+                    print("Select a valid choice")
+                    con()
+                print("What operation would you like to do with these numbers?")
+                print("1. Sum")
+                print("2. Subtract")
+                print("3. Product")
+                print("4. Divide")
+                print("5. Conjugate")
+                operation = int(input("Enter your choice: "))
+                if operation == 1:
+                    sum()
+                elif operation == 2:
+                    subtract()
+                elif operation == 3:
+                    product()
+                elif operation == 4:
+                    divide()
+                elif operation == 5:
+                    con()
+                else:
+                    print("Select a valid choice")
+                    comp()
+
+                print("What operation would you like to do with these numbers?")
+                print("1. Sum")
+                print("2. Subtract")
+                print("3. Product")
+                print("4. Divide")
+                print("5. Conjugate")
+                operation = int(input("Enter your choice: "))
+                if operation == 1:
+                    sum()
+                elif operation == 2:
+                    subtract()
+                elif operation == 3:
+                    product()
+                elif operation == 4:
+                    divide()
+                elif operation == 5:
+                    con()
+                else:
+                    ("Select a valid choice")
+                    comp()
+
     def aritmithic():
         a = int(input("So, what is the first number? (base of the exponent, radicand, argument of logarithm, factorial number)? "))
         b = int(input("Ok, what is the second number? (exponent of the exponent, base of logarithm)? "))
@@ -201,6 +283,8 @@ def code():
             log(a, b)
         elif operation == 8:
             fact(a)
+        elif operation == 9:
+            comp()
         else:
             print("Please enter a valid option")
             print("Please renter your numbers")
@@ -442,8 +526,7 @@ def code():
                 print("The temperature in Celsius is: ", endNumC, "°C")
                 print("The temperature in Fahrenheit is: ", endNumF, "°F")
 
-        answer = str(
-            input("Do you want to calculate distances or temperatures? "))
+        answer = str(input("Do you want to calculate distances or temperatures? "))
         answer = answer.replace(" ", "").lower()
 
         if answer == 'distance' or answer == 'distances':
@@ -452,20 +535,23 @@ def code():
             temp()
 
     def geo():
-        what = input("What would you like to do in the geometry section? ")
+        what = input("What would you like to do in the geometry section? (Tangent, Cosine, Sine, Pythagoras)")
         what = what.replace(" ", "").lower()
 
         if what == 'sine':
             x=float(input("What is the number? "))
             print(f"The answer is {math.sin(x)}")
+            again()
 
         elif what == 'cosine':
             x=float(input("What is the number? "))
             print(f"The answer is {math.cos(x)}")
+            again()
 
         elif what =='tangent':
             x=float(input("What is the number? "))
             print(f"The answer is {math.tan(x)}")
+            again()
 
         elif what == 'pythagoras' or what == 'pythagoreantheorem' or what == 'pythagorean':
             missing = input(
