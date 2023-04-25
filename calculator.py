@@ -6,12 +6,11 @@ import fractions
 
 
 def code():
-
     def again():
         another = input("Have another calculation? ")
         another = another.replace(" ", "").lower()
 
-        if another == 'yes' or another == 'y':
+        if another == "yes" or another == "y":
             define()
         else:
             pass
@@ -25,8 +24,8 @@ def code():
         if answer == "absolutevalue":
             print("Your answer is ", abs(a + b))
             again()
-        elif answer == 'round' or answer == 'rounded':
-            print("Your answer is: ", round(a+b))
+        elif answer == "round" or answer == "rounded":
+            print("Your answer is: ", round(a + b))
             again()
         else:
             print(a + b)
@@ -40,8 +39,8 @@ def code():
         if answer == "absolutevalue":
             print("Your answer is ", abs(a - b))
             again()
-        elif answer == 'round' or answer == 'rounded':
-            print("Your answer is: ", round(a-b))
+        elif answer == "round" or answer == "rounded":
+            print("Your answer is: ", round(a - b))
             again()
         else:
             print(a - b)
@@ -55,12 +54,11 @@ def code():
         if answer == "absolutevalue":
             print("Your answer is ", abs(a * b))
             again()
-        elif answer == 'fraction' or answer == 'fractions':
-            print("Your answer is: ", fractions.Fraction(
-                a*b).limit_denominator(100))
+        elif answer == "fraction" or answer == "fractions":
+            print("Your answer is: ", fractions.Fraction(a * b).limit_denominator(100))
             again()
-        elif answer == 'round' or answer == 'rounded':
-            print("Your answer is: ", round(a*b))
+        elif answer == "round" or answer == "rounded":
+            print("Your answer is: ", round(a * b))
             again()
         else:
             print(a * b)
@@ -80,12 +78,11 @@ def code():
         elif answer == "integer":
             print("Your answer is ", (a // b))
             again()
-        elif answer == 'round' or answer == 'rounded':
-            print("Your answer is: ", round(a/b))
+        elif answer == "round" or answer == "rounded":
+            print("Your answer is: ", round(a / b))
             again()
-        elif answer == 'fraction' or answer == 'fractions':
-            print("Your answer is: ", fractions.Fraction(
-                a/b).limit_denominator(100))
+        elif answer == "fraction" or answer == "fractions":
+            print("Your answer is: ", fractions.Fraction(a / b).limit_denominator(100))
             again()
         else:
             print(a / b)
@@ -97,16 +94,15 @@ def code():
         a = fractions.Fraction(a)
         b = fractions.Fraction(b)
         result = a**b
-        if answer.lower() == 'absolutevalue':
+        if answer.lower() == "absolutevalue":
             print(f"Your answer is {abs(result)}")
             again()
         elif answer.lower() == "percentage" or answer.lower() == "percent":
-            print("Your answer is: ", result/100, "%")
-        elif answer.lower() == 'fraction' or answer.lower() == 'fractions':
-            print("Your answer is: ", fractions.Fraction(
-                result).limit_denominator(100))
+            print("Your answer is: ", result / 100, "%")
+        elif answer.lower() == "fraction" or answer.lower() == "fractions":
+            print("Your answer is: ", fractions.Fraction(result).limit_denominator(100))
             again()
-        elif answer.lower() == 'round' or answer.lower() == 'rounded':
+        elif answer.lower() == "round" or answer.lower() == "rounded":
             print("Your answer is: ", round(result))
             again()
         else:
@@ -119,14 +115,13 @@ def code():
         a = fractions.Fraction(a)
         b = fractions.Fraction(b)
         result = math.sqrt(a)
-        if answer.lower() == 'absolutevalue':
+        if answer.lower() == "absolutevalue":
             print(f"Your answer is {abs(result)}")
             again()
-        elif answer.lower() == 'fraction' or answer.lower() == 'fractions':
-            print("Your answer is: ", fractions.Fraction(
-                result).limit_denominator(100))
+        elif answer.lower() == "fraction" or answer.lower() == "fractions":
+            print("Your answer is: ", fractions.Fraction(result).limit_denominator(100))
             again()
-        elif answer.lower() == 'round' or answer.lower() == 'rounded':
+        elif answer.lower() == "round" or answer.lower() == "rounded":
             print("Your answer is: ", round(result))
             again()
         else:
@@ -139,14 +134,13 @@ def code():
         a = fractions.Fraction(a)
         b = fractions.Fraction(b)
         result = math.log(a, b)
-        if answer.lower() == 'absolutevalue':
+        if answer.lower() == "absolutevalue":
             print(f"Your answer is {abs(result)}")
             again()
-        elif answer.lower() == 'fraction' or answer.lower() == 'fractions':
-            print("Your answer is: ", fractions.Fraction(
-                result).limit_denominator(100))
+        elif answer.lower() == "fraction" or answer.lower() == "fractions":
+            print("Your answer is: ", fractions.Fraction(result).limit_denominator(100))
             again()
-        elif answer.lower() == 'round' or answer.lower() == 'rounded':
+        elif answer.lower() == "round" or answer.lower() == "rounded":
             print("Your answer is: ", round(result))
             again()
         else:
@@ -157,14 +151,13 @@ def code():
         answer = str(input("How do you want your answer? "))
         answer = answer.replace(" ", "")
         result = math.factorial(a)
-        if answer.lower() == 'absolutevalue':
+        if answer.lower() == "absolutevalue":
             print(f"Your answer is {abs(result)}")
             again()
-        elif answer.lower() == 'fraction' or answer.lower() == 'fractions':
-            print("Your answer is: ", fractions.Fraction(
-                result).limit_denominator(100))
+        elif answer.lower() == "fraction" or answer.lower() == "fractions":
+            print("Your answer is: ", fractions.Fraction(result).limit_denominator(100))
             again()
-        elif answer.lower() == 'round' or answer.lower() == 'rounded':
+        elif answer.lower() == "round" or answer.lower() == "rounded":
             print("Your answer is: ", round(result))
             again()
         else:
@@ -172,91 +165,101 @@ def code():
             again()
 
     def comp():
-            print("Numbers should be in ordered pair form -1,0")
-            realPart1 = float(input("What is the real part of the first number? "))
-            imgPart1 = float(input("What is the imaginary part of the first number? "))
-            realPart2 = float(input("What is the real part of the second number? "))
-            imgPart2 = float(input("What is the imaginary part of the second number? "))
-            complex1 = complex(realPart1, imgPart1)
-            complex2 = complex(realPart2, imgPart2)
+        print("Numbers should be in ordered pair form -1,0")
+        realPart1 = float(input("What is the real part of the first number? "))
+        imgPart1 = float(input("What is the imaginary part of the first number? "))
+        realPart2 = float(input("What is the real part of the second number? "))
+        imgPart2 = float(input("What is the imaginary part of the second number? "))
+        complex1 = complex(realPart1, imgPart1)
+        complex2 = complex(realPart2, imgPart2)
 
-            def sum():
-                res = complex1 + complex2
-                print("The answer is ", res)
+        def sum():
+            res = complex1 + complex2
+            print("The answer is ", res)
+            again()
+
+        def subtract():
+            res = complex1 - complex2
+            print("The answer is ", res)
+            again()
+
+        def product():
+            res = complex1 * complex2
+            print("The answer is ", res)
+            again()
+
+        def divide():
+            res = complex1 / complex2
+            print("The answer is ", res)
+            again()
+
+        def con():
+            define = input("Which number do you want the conjugate for? 1 or 2 ")
+            if define == "firstnumber" or define == "1":
+                print(f"The conjugate of {complex1} is {complex1.conjugate()}")
                 again()
-
-            def subtract():
-                res = complex1 - complex2
-                print("The answer is ", res)
+            elif define == "secondnumber" or define == "2":
+                print(f"The conjugate of {complex2} is {complex2.conjugate()}")
                 again()
+            else:
+                print("Select a valid choice")
+                con()
+            print("What operation would you like to do with these numbers?")
+            print("1. Sum")
+            print("2. Subtract")
+            print("3. Product")
+            print("4. Divide")
+            print("5. Conjugate")
+            operation = int(input("Enter your choice: "))
+            if operation == 1:
+                sum()
+            elif operation == 2:
+                subtract()
+            elif operation == 3:
+                product()
+            elif operation == 4:
+                divide()
+            elif operation == 5:
+                con()
+            else:
+                print("Select a valid choice")
+                comp()
 
-            def product():
-                res = complex1 * complex2
-                print("The answer is ", res)
-                again()
-
-            def divide():
-                res = complex1 / complex2
-                print("The answer is ", res)
-                again()
-
-            def con():
-                define = input("Which number do you want the conjugate for? 1 or 2 ")
-                if define == "firstnumber" or define == "1":
-                    print(f"The conjugate of {complex1} is {complex1.conjugate()}")
-                    again()
-                elif define == "secondnumber" or define == "2":
-                    print(f"The conjugate of {complex2} is {complex2.conjugate()}")
-                    again()
-                else:
-                    print("Select a valid choice")
-                    con()
-                print("What operation would you like to do with these numbers?")
-                print("1. Sum")
-                print("2. Subtract")
-                print("3. Product")
-                print("4. Divide")
-                print("5. Conjugate")
-                operation = int(input("Enter your choice: "))
-                if operation == 1:
-                    sum()
-                elif operation == 2:
-                    subtract()
-                elif operation == 3:
-                    product()
-                elif operation == 4:
-                    divide()
-                elif operation == 5:
-                    con()
-                else:
-                    print("Select a valid choice")
-                    comp()
-
-                print("What operation would you like to do with these numbers?")
-                print("1. Sum")
-                print("2. Subtract")
-                print("3. Product")
-                print("4. Divide")
-                print("5. Conjugate")
-                operation = int(input("Enter your choice: "))
-                if operation == 1:
-                    sum()
-                elif operation == 2:
-                    subtract()
-                elif operation == 3:
-                    product()
-                elif operation == 4:
-                    divide()
-                elif operation == 5:
-                    con()
-                else:
-                    ("Select a valid choice")
-                    comp()
+            print("What operation would you like to do with these numbers?")
+            print("1. Sum")
+            print("2. Subtract")
+            print("3. Product")
+            print("4. Divide")
+            print("5. Conjugate")
+            operation = int(input("Enter your choice: "))
+            if operation == 1:
+                sum()
+            elif operation == 2:
+                subtract()
+            elif operation == 3:
+                product()
+            elif operation == 4:
+                divide()
+            elif operation == 5:
+                con()
+            else:
+                ("Select a valid choice")
+                comp()
 
     def aritmithic():
-        a = int(input("So, what is the first number? (base of the exponent, radicand, argument of logarithm, factorial number)? "))
-        b = int(input("Ok, what is the second number? (exponent of the exponent, base of logarithm)? "))
-        print("The following will be the choices of arithmetic operations you can perform")
+        a = int(
+            input(
+                "So, what is the first number? (base of the exponent, radicand, argument of logarithm, factorial number)? "
+            )
+        )
+        b = int(
+            input(
+                "Ok, what is the second number? (exponent of the exponent, base of logarithm)? "
+            )
+        )
+        print(
+            "The following will be the choices of arithmetic operations you can perform"
+        )
         print("1. Addition")
         print("2. Subtraction")
         print("3. Multiplication")
@@ -265,7 +268,11 @@ def code():
         print("6. Square Root")
         print("7. Logarithm")
         print("8. Factorials")
-        operation = int(input("Which of the 5 choices of operation would you like to perform on these numbers? "))
+        operation = int(
+            input(
+                "Which of the 5 choices of operation would you like to perform on these numbers? "
+            )
+        )
 
         if operation == 1:
             add(a, b)
@@ -292,31 +299,30 @@ def code():
 
     def area():
         shape = str(
-            input("What shape is the problem ex.Square, triangle, circle, etc."))
+            input("What shape is the problem ex.Square, triangle, circle, etc.")
+        )
         shape = shape.replace(" ", "")
         if shape.lower() == "square":
-            side1 = int(
-                input("What is the measure of one side of the square? "))
+            side1 = int(input("What is the measure of one side of the square? "))
             unit = str(input("In what units are the measures? "))
             area = side1**2
             print(f"The area of the quadrilateral is {area} {unit} squared")
             again()
         elif shape.lower() == "rectangle" or shape.lower() == "parallelogram":
             side1 = int(input("What is one side of the parallelogram? "))
-            side2 = int(
-                input("What is the second side of the parallelogram? "))
+            side2 = int(input("What is the second side of the parallelogram? "))
             unit = str(input("What unit are the measures? "))
-            area = side1*side2
+            area = side1 * side2
             print(f"The area of the parallelogram is {area} {unit} squared")
         elif shape.lower() == "triangle":
             base = int(input("What is the base of the triangle? "))
             height = int(input("What is the height of the triangle? "))
-            area = (base*height)/2
+            area = (base * height) / 2
             print(f"The area of the triangle is {area}")
             again()
-        elif shape.lower() == 'circle':
+        elif shape.lower() == "circle":
             radius = int(input("What is the radius of the circle? "))
-            area = math.pi*(radius**2)
+            area = math.pi * (radius**2)
             print(f"The area of the circle is {area}")
             again()
         else:
@@ -325,26 +331,30 @@ def code():
 
     def perimeter():
         shape = str(
-            input("What shape is the problem? ex.Square, triangle, circle, etc. "))
+            input("What shape is the problem? ex.Square, triangle, circle, etc. ")
+        )
         shape = shape.replace(" ", "")
-        if shape.lower() == "square" or shape.lower() == "rectangle" or shape.lower() == "parallelogram":
+        if (
+            shape.lower() == "square"
+            or shape.lower() == "rectangle"
+            or shape.lower() == "parallelogram"
+        ):
             side1 = int(input("What is one side of the quadrilateral? "))
-            side2 = int(
-                input("What is the second side of the quadrilateral? "))
-            peri = 2*(side1+side2)
+            side2 = int(input("What is the second side of the quadrilateral? "))
+            peri = 2 * (side1 + side2)
             print(f"The perimeter of the quadrilateral is {peri}")
             again()
 
-        elif shape.lower() == 'triangle':
+        elif shape.lower() == "triangle":
             side1 = int(input("What is the length of the first side? "))
             side2 = int(input("What is the length of the second side? "))
             side3 = int(input("What is the length of the third side? "))
-            peri = side1+side2+side3
+            peri = side1 + side2 + side3
             print(f"The perimeter of the triangle is {peri}")
         elif shape.lower() == "circle":
             radius = str(input("What is the radius of the circle? "))
             radius = fractions.Fraction(radius)
-            peri = 2*math.pi*radius
+            peri = 2 * math.pi * radius
             answer = input("How do you want your answer? ")
             answer = answer.replace(" ", "")
             print(f"The perimeter of the circle is {peri}")
@@ -366,134 +376,149 @@ def code():
             startNum = fractions.Fraction(startNum)
 
             if startUnit == "miles" or startUnit == "mile" or startUnit == "mi":
-
-                if endUnit == 'feet' or endUnit == 'foot' or endUnit == "ft":
-
+                if endUnit == "feet" or endUnit == "foot" or endUnit == "ft":
                     answer = str(input("How do you want your answer? "))
                     answer = answer.replace(" ", "")
                     answer = answer.lower()
 
-                    if answer == 'round' or answer == 'rounded':
-                        print("The approximate measurement is now: ",
-                              round(startNum*5280))
+                    if answer == "round" or answer == "rounded":
+                        print(
+                            "The approximate measurement is now: ",
+                            round(startNum * 5280),
+                        )
                         again()
                     else:
-                        print("The exact measurement is now: ", startNum*5280)
+                        print("The exact measurement is now: ", startNum * 5280)
                         again()
 
-                elif endUnit == "kilometers" or endUnit == 'kilometer' or startUnit == "km":
-
+                elif (
+                    endUnit == "kilometers"
+                    or endUnit == "kilometer"
+                    or startUnit == "km"
+                ):
                     answer = str(input("How do you want your answer? "))
                     answer = answer.replace(" ", "")
                     answer = answer.lower()
 
-                    if answer == 'round' or answer == 'rounded':
-                        print("The approximate measurement is now: ",
-                              round(startNum*1.60934))
+                    if answer == "round" or answer == "rounded":
+                        print(
+                            "The approximate measurement is now: ",
+                            round(startNum * 1.60934),
+                        )
                         again()
                     else:
-                        print("The exact measurement is now: ", startNum*1.60934)
+                        print("The exact measurement is now: ", startNum * 1.60934)
                         again()
 
-                elif endUnit == 'yards' or endUnit == 'yard' or endUnit == 'yd':
+                elif endUnit == "yards" or endUnit == "yard" or endUnit == "yd":
                     answer = str(input("How do you want your answer? "))
                     answer = answer.replace(" ", "").lower()
 
-                    if answer == 'round' or answer == 'rounded':
-                        print("The approximate measurement is now: ",
-                              round(startNum*1760))
+                    if answer == "round" or answer == "rounded":
+                        print(
+                            "The approximate measurement is now: ",
+                            round(startNum * 1760),
+                        )
                         again()
                     else:
-                        print("The exact measurement is now: ", startNum*1760)
+                        print("The exact measurement is now: ", startNum * 1760)
                         again()
                 else:
                     print("You have entered a unit that is not supported! ")
                     distance()
 
-            elif startUnit == 'kilometers' or startUnit == 'kilometer' or startUnit == 'km':
-
-                if endUnit == 'miles' or endUnit == 'mi' or endUnit == 'mile':
-
+            elif (
+                startUnit == "kilometers"
+                or startUnit == "kilometer"
+                or startUnit == "km"
+            ):
+                if endUnit == "miles" or endUnit == "mi" or endUnit == "mile":
                     answer = str(input("How do you want your answer? "))
                     answer = answer.replace(" ", "")
                     answer = answer.lower()
 
-                    if answer == 'round' or answer == 'rounded':
-                        print("The approximate measurement is now: ",
-                              round(startNum*1.609344))
+                    if answer == "round" or answer == "rounded":
+                        print(
+                            "The approximate measurement is now: ",
+                            round(startNum * 1.609344),
+                        )
                         again()
                     else:
-                        print("The measurement is now: ", startNum*1.609344)
+                        print("The measurement is now: ", startNum * 1.609344)
                         again()
 
-                elif endUnit == 'foot' or endUnit == 'feet' or endUnit == 'ft':
-
+                elif endUnit == "foot" or endUnit == "feet" or endUnit == "ft":
                     answer = str(input("How do you want your answer? "))
                     answer = answer.replace(" ", "")
                     answer = answer.lower()
 
-                    if answer == 'round' or answer == 'rounded':
-                        print("The approximate measurement is now: ",
-                              round(startNum*3280.84))
+                    if answer == "round" or answer == "rounded":
+                        print(
+                            "The approximate measurement is now: ",
+                            round(startNum * 3280.84),
+                        )
                         again()
                     else:
-                        print("The measurement is now: ", startNum*3280.84)
+                        print("The measurement is now: ", startNum * 3280.84)
                         again()
 
-                elif endUnit == 'yard' or endUnit == 'yards' or endUnit == 'yd':
-
+                elif endUnit == "yard" or endUnit == "yards" or endUnit == "yd":
                     answer = str(input(" How do you want your answer? "))
                     answer = answer.replace(" ", "")
                     answer = answer.lower()
 
-                    if answer == 'round' or answer == 'rounded':
-                        print("The approximate measurement is now: ",
-                              round(startNum*1093.61))
+                    if answer == "round" or answer == "rounded":
+                        print(
+                            "The approximate measurement is now: ",
+                            round(startNum * 1093.61),
+                        )
                         again()
                     else:
-                        print("The measurement is now: ", startNum*1093.61)
+                        print("The measurement is now: ", startNum * 1093.61)
                         again()
                 else:
                     print("You have entered a unit that is not supported! ")
                     distance()
-            elif startUnit == 'yards' or startUnit == 'yd' or startUnit == 'yard':
-                if endUnit == 'miles' or endUnit == 'mi' or endUnit == 'mile':
+            elif startUnit == "yards" or startUnit == "yd" or startUnit == "yard":
+                if endUnit == "miles" or endUnit == "mi" or endUnit == "mile":
                     answer = str(input(" How do you want your answer? "))
                     answer = answer.replace(" ", "")
                     answer = answer.lower()
 
-                    if answer == 'round' or answer == 'rounded':
-                        print("The approximate measurement is now: ",
-                              round(startNum/1760))
+                    if answer == "round" or answer == "rounded":
+                        print(
+                            "The approximate measurement is now: ",
+                            round(startNum / 1760),
+                        )
                         again()
                     else:
-                        print("The measurement is now: ", startNum/1760)
+                        print("The measurement is now: ", startNum / 1760)
                         again()
-                elif endUnit == 'feet' or endUnit == 'ft' or endUnit == 'foot':
-
+                elif endUnit == "feet" or endUnit == "ft" or endUnit == "foot":
                     answer = str(input(" How do you want your answer? "))
                     answer = answer.replace(" ", "")
                     answer = answer.lower()
 
-                    if answer == 'round' or answer == 'rounded':
-                        print("The approximate measurement is now: ",
-                              round(startNum*3))
+                    if answer == "round" or answer == "rounded":
+                        print(
+                            "The approximate measurement is now: ", round(startNum * 3)
+                        )
                         again()
                     else:
-                        print("The measurement is now: ", startNum*3)
+                        print("The measurement is now: ", startNum * 3)
                         again()
-                elif endUnit == 'in' or endUnit == 'inches' or endUnit == 'inch':
-
+                elif endUnit == "in" or endUnit == "inches" or endUnit == "inch":
                     answer = str(input(" How do you want your answer? "))
                     answer = answer.replace(" ", "")
                     answer = answer.lower()
 
-                    if answer == 'round' or answer == 'rounded':
-                        print("The approximate measurement is now: ",
-                              round(startNum*36))
+                    if answer == "round" or answer == "rounded":
+                        print(
+                            "The approximate measurement is now: ", round(startNum * 36)
+                        )
                         again()
                     else:
-                        print("The measurement is now: ", startNum*36)
+                        print("The measurement is now: ", startNum * 36)
                         again()
                 else:
                     print("You have entered a unit that is not supported! ")
@@ -504,19 +529,20 @@ def code():
 
         def temp():
             startUnit = str(
-                input("What is the starting unit: Fahrenheit, Celsius, or Kelvin?"))
+                input("What is the starting unit: Fahrenheit, Celsius, or Kelvin?")
+            )
             startNum = str(input("What is the starting number?"))
             startNum = fractions.Fraction(startNum)
 
             startUnit = startUnit.replace(" ", "").lower()
 
             if startUnit == "fahrenheit":
-                endNumC = (startNum-32)/1.8
+                endNumC = (startNum - 32) / 1.8
                 endNumK = endNumC + 273.15
                 print("The temperature in Celsius is: ", endNumC, "°C")
                 print("The temperature in Kelvin is: ", endNumK, "K")
             elif startUnit == "celsius" or startUnit == "centigrade":
-                endNumF = (1.8)*startNum + 32
+                endNumF = (1.8) * startNum + 32
                 endNumK = startNum + 273.15
                 print("The temperature in Fahrenheit is: ", endNumF, "°F")
                 print("The temperature in Kelvin is: ", endNumK, "K")
@@ -529,42 +555,52 @@ def code():
         answer = str(input("Do you want to calculate distances or temperatures? "))
         answer = answer.replace(" ", "").lower()
 
-        if answer == 'distance' or answer == 'distances':
+        if answer == "distance" or answer == "distances":
             distance()
-        elif answer == 'temperature' or answer == 'temperatures':
+        elif answer == "temperature" or answer == "temperatures":
             temp()
 
     def geo():
-        what = input("What would you like to do in the geometry section? (Tangent, Cosine, Sine, Pythagoras)")
+        what = input(
+            "What would you like to do in the geometry section? (Tangent, Cosine, Sine, Pythagoras)"
+        )
         what = what.replace(" ", "").lower()
 
-        if what == 'sine':
-            x=float(input("What is the number? "))
+        if what == "sine":
+            x = float(input("What is the number? "))
             print(f"The answer is {math.sin(x)}")
             again()
 
-        elif what == 'cosine':
-            x=float(input("What is the number? "))
+        elif what == "cosine":
+            x = float(input("What is the number? "))
             print(f"The answer is {math.cos(x)}")
             again()
 
-        elif what =='tangent':
-            x=float(input("What is the number? "))
+        elif what == "tangent":
+            x = float(input("What is the number? "))
             print(f"The answer is {math.tan(x)}")
             again()
 
-        elif what == 'pythagoras' or what == 'pythagoreantheorem' or what == 'pythagorean':
+        elif (
+            what == "pythagoras"
+            or what == "pythagoreantheorem"
+            or what == "pythagorean"
+        ):
             missing = input(
-                "What is the missing side of the right triangle? If none, type no ")
+                "What is the missing side of the right triangle? If none, type no "
+            )
             missing = missing.replace(" ", "").lower()
 
-            if missing == "no" or missing == 'none':
+            if missing == "no" or missing == "none":
                 a = int(
-                    input("What is the measurement of side A in the right triangle? "))
+                    input("What is the measurement of side A in the right triangle? ")
+                )
                 b = int(
-                    input("What is the measurement of side B in the right triangle? "))
+                    input("What is the measurement of side B in the right triangle? ")
+                )
                 c = int(
-                    input("What is the measurement of side C in the right triangle? "))
+                    input("What is the measurement of side C in the right triangle? ")
+                )
                 ab = a**2 + b**2
 
                 if ab == c**2:
@@ -574,21 +610,21 @@ def code():
                     print("FALSE, the triangle is not a right triangle!")
                     again()
 
-            elif missing == 'a':
+            elif missing == "a":
                 b = int(input("Which side is B in the right triangle? "))
                 c = int(input("Which side is C in the right triangle? "))
                 a = math.sqrt(c**2 - b**2)
                 print(f"Side a is {a}")
                 again()
 
-            elif missing == 'b':
+            elif missing == "b":
                 a = int(input("Which side is A in the right triangle? "))
                 c = int(input("Which side is C in the right triangle? "))
                 b = math.sqrt(c**2 - a**2)
                 print(f"Side b is {b}")
                 again()
 
-            elif missing == 'c':
+            elif missing == "c":
                 b = int(input("Which side is B in the right triangle? "))
                 a = int(input("Which side is A in the right triangle? "))
                 c = math.sqrt(a**2 + b**2)
@@ -604,7 +640,6 @@ def code():
             geo()
 
     def define():
-
         print("The following will be the choices of mathematics you can perform")
         print("Enter only the numbers associated with")
         print("1 - Aritmitic/Basic Operations")
@@ -612,8 +647,7 @@ def code():
         print("3 - Perimeter")
         print("4 - Conversions")
         print("5 - Geometry")
-        definer = int(
-            input("Which area of mathematics would you like to choose? "))
+        definer = int(input("Which area of mathematics would you like to choose? "))
         if definer == 1:
             aritmithic()
         elif definer == 2:
@@ -629,13 +663,19 @@ def code():
             define()
 
     # START
-    print("Hi, I am an AI Calculator who can calculate extreme numbers. Feel free to enter any number you like!")
+    print(
+        "Hi, I am an AI Calculator who can calculate extreme numbers. Feel free to enter any number you like!"
+    )
     print("By the way, I cannot calculate variables, only constants")
-    print("I would also like to mention that everything must be spelled correctly or I am no use to you")
+    print(
+        "I would also like to mention that everything must be spelled correctly or I am no use to you"
+    )
     name = str(input("Whats your name? "))
     print(f"Hi {name}!")
     print("By the way, I cannot calculate variables, only constants")
-    print("I would also like to mention that everything must be spelled correctly or I am no use to you")
+    print(
+        "I would also like to mention that everything must be spelled correctly or I am no use to you"
+    )
     define()
 
 
