@@ -1,8 +1,6 @@
 # Librarys
-import math
-import fractions
-import sympy
-from sympy import solve, Eq, symbols
+import math as m
+import fractions as frac
 
 # Functions
 
@@ -20,8 +18,8 @@ def code():
     def add(a, b):
         answer = input("How do you want your answer? ")
         answer = answer.replace(" ", "").lower()
-        a = fractions.Fraction(a)
-        b = fractions.Fraction(b)
+        a = frac.Fraction(a)
+        b = frac.Fraction(b)
 
         if answer == "absolutevalue":
             print("Your answer is ", abs(a + b))
@@ -36,8 +34,8 @@ def code():
     def subtract(a, b):
         answer = input("How do you want your answer?")
         answer = answer.replace(" ", "").lower()
-        a = fractions.Fraction(a)
-        b = fractions.Fraction(b)
+        a = frac.Fraction(a)
+        b = frac.Fraction(b)
         if answer == "absolutevalue":
             print("Your answer is ", abs(a - b))
             again()
@@ -51,13 +49,13 @@ def code():
     def multiply(a, b):
         answer = input("How do you want your answer? ")
         answer = answer.replace(" ", "").lower()
-        a = fractions.Fraction(a)
-        b = fractions.Fraction(b)
+        a = frac.Fraction(a)
+        b = frac.Fraction(b)
         if answer == "absolutevalue":
             print("Your answer is ", abs(a * b))
             again()
         elif answer == "fraction" or answer == "fractions":
-            print("Your answer is: ", fractions.Fraction(a * b).limit_denominator(100))
+            print("Your answer is: ", frac.Fraction(a * b).limit_denominator(100))
             again()
         elif answer == "round" or answer == "rounded":
             print("Your answer is: ", round(a * b))
@@ -69,8 +67,8 @@ def code():
     def division(a, b):
         answer = input("How do you want your answer? ")
         answer = answer.replace(" ", "").lower()
-        a = fractions.Fraction(a)
-        b = fractions.Fraction(b)
+        a = frac.Fraction(a)
+        b = frac.Fraction(b)
         if answer == "absolutevalue":
             print("Your answer is ", abs(a / b))
             again()
@@ -84,7 +82,7 @@ def code():
             print("Your answer is: ", round(a / b))
             again()
         elif answer == "fraction" or answer == "fractions":
-            print("Your answer is: ", fractions.Fraction(a / b).limit_denominator(100))
+            print("Your answer is: ", frac.Fraction(a / b).limit_denominator(100))
             again()
         else:
             print(a / b)
@@ -93,8 +91,8 @@ def code():
     def exponents(a, b):
         answer = str(input("How do you want your answer? "))
         answer = answer.replace(" ", "")
-        a = fractions.Fraction(a)
-        b = fractions.Fraction(b)
+        a = frac.Fraction(a)
+        b = frac.Fraction(b)
         result = a**b
         if answer.lower() == "absolutevalue":
             print(f"Your answer is {abs(result)}")
@@ -102,7 +100,7 @@ def code():
         elif answer.lower() == "percentage" or answer.lower() == "percent":
             print("Your answer is: ", result / 100, "%")
         elif answer.lower() == "fraction" or answer.lower() == "fractions":
-            print("Your answer is: ", fractions.Fraction(result).limit_denominator(100))
+            print("Your answer is: ", frac.Fraction(result).limit_denominator(100))
             again()
         elif answer.lower() == "round" or answer.lower() == "rounded":
             print("Your answer is: ", round(result))
@@ -114,14 +112,14 @@ def code():
     def sqrt(a):
         answer = str(input("How do you want your answer? "))
         answer = answer.replace(" ", "")
-        a = fractions.Fraction(a)
-        b = fractions.Fraction(b)
-        result = math.sqrt(a)
+        a = frac.Fraction(a)
+        b = frac.Fraction(b)
+        result = m.sqrt(a)
         if answer.lower() == "absolutevalue":
             print(f"Your answer is {abs(result)}")
             again()
         elif answer.lower() == "fraction" or answer.lower() == "fractions":
-            print("Your answer is: ", fractions.Fraction(result).limit_denominator(100))
+            print("Your answer is: ", frac.Fraction(result).limit_denominator(100))
             again()
         elif answer.lower() == "round" or answer.lower() == "rounded":
             print("Your answer is: ", round(result))
@@ -133,14 +131,14 @@ def code():
     def log(a, b):
         answer = str(input("How do you want your answer? "))
         answer = answer.replace(" ", "")
-        a = fractions.Fraction(a)
-        b = fractions.Fraction(b)
-        result = math.log(a, b)
+        a = frac.Fraction(a)
+        b = frac.Fraction(b)
+        result = m.log(a, b)
         if answer.lower() == "absolutevalue":
             print(f"Your answer is {abs(result)}")
             again()
         elif answer.lower() == "fraction" or answer.lower() == "fractions":
-            print("Your answer is: ", fractions.Fraction(result).limit_denominator(100))
+            print("Your answer is: ", frac.Fraction(result).limit_denominator(100))
             again()
         elif answer.lower() == "round" or answer.lower() == "rounded":
             print("Your answer is: ", round(result))
@@ -152,12 +150,12 @@ def code():
     def fact(a):
         answer = str(input("How do you want your answer? "))
         answer = answer.replace(" ", "")
-        result = math.factorial(a)
+        result = m.factorial(a)
         if answer.lower() == "absolutevalue":
             print(f"Your answer is {abs(result)}")
             again()
         elif answer.lower() == "fraction" or answer.lower() == "fractions":
-            print("Your answer is: ", fractions.Fraction(result).limit_denominator(100))
+            print("Your answer is: ", frac.Fraction(result).limit_denominator(100))
             again()
         elif answer.lower() == "round" or answer.lower() == "rounded":
             print("Your answer is: ", round(result))
@@ -324,7 +322,7 @@ def code():
             again()
         elif shape.lower() == "circle":
             radius = int(input("What is the radius of the circle? "))
-            area = math.pi * (radius**2)
+            area = m.pi * (radius**2)
             print(f"The area of the circle is {area}")
             again()
         else:
@@ -355,8 +353,8 @@ def code():
             print(f"The perimeter of the triangle is {peri}")
         elif shape.lower() == "circle":
             radius = str(input("What is the radius of the circle? "))
-            radius = fractions.Fraction(radius)
-            peri = 2 * math.pi * radius
+            radius = frac.Fraction(radius)
+            peri = 2 * m.pi * radius
             answer = input("How do you want your answer? ")
             answer = answer.replace(" ", "")
             print(f"The perimeter of the circle is {peri}")
@@ -375,7 +373,7 @@ def code():
             endUnit = endUnit.replace(" ", "")
             endUnit = endUnit.lower()
 
-            startNum = fractions.Fraction(startNum)
+            startNum = frac.Fraction(startNum)
 
             if startUnit == "miles" or startUnit == "mile" or startUnit == "mi":
                 if endUnit == "feet" or endUnit == "foot" or endUnit == "ft":
@@ -534,7 +532,7 @@ def code():
                 input("What is the starting unit: Fahrenheit, Celsius, or Kelvin?")
             )
             startNum = str(input("What is the starting number?"))
-            startNum = fractions.Fraction(startNum)
+            startNum = frac.Fraction(startNum)
 
             startUnit = startUnit.replace(" ", "").lower()
 
@@ -570,17 +568,17 @@ def code():
 
         if what == "sine":
             x = float(input("What is the number? "))
-            print(f"The answer is {math.sin(x)}")
+            print(f"The answer is {m.sin(x)}")
             again()
 
         elif what == "cosine":
             x = float(input("What is the number? "))
-            print(f"The answer is {math.cos(x)}")
+            print(f"The answer is {m.cos(x)}")
             again()
 
         elif what == "tangent":
             x = float(input("What is the number? "))
-            print(f"The answer is {math.tan(x)}")
+            print(f"The answer is {m.tan(x)}")
             again()
 
         elif (
@@ -615,21 +613,21 @@ def code():
             elif missing == "a":
                 b = int(input("Which side is B in the right triangle? "))
                 c = int(input("Which side is C in the right triangle? "))
-                a = math.sqrt(c**2 - b**2)
+                a = m.sqrt(c**2 - b**2)
                 print(f"Side a is {a}")
                 again()
 
             elif missing == "b":
                 a = int(input("Which side is A in the right triangle? "))
                 c = int(input("Which side is C in the right triangle? "))
-                b = math.sqrt(c**2 - a**2)
+                b = m.sqrt(c**2 - a**2)
                 print(f"Side b is {b}")
                 again()
 
             elif missing == "c":
                 b = int(input("Which side is B in the right triangle? "))
                 a = int(input("Which side is A in the right triangle? "))
-                c = math.sqrt(a**2 + b**2)
+                c = m.sqrt(a**2 + b**2)
                 print(f"Side c is {c}")
                 again()
 
@@ -641,16 +639,15 @@ def code():
             print("Invalid input!")
             geo()
 
-    def var():
-        type = input("What type of equation do you have? Systems or algebraic")
+    # def var():
+    #     type = input("What type of equation do you have? Systems or algebraic")
 
-        def alg():
-            variables = input("What is your variable")
-            variables = symbols(variables.lower().replace(" ",""))
-            equation = input("What is your equation? ex. x+3=5")
-            solution = sympy.solve(equation)
-            print(f"The answer is {solution}")
-
+    #     def alg():
+    #         variables = input("What is your variable")
+    #         variables = symbols(variables.lower().replace(" ", ""))
+    #         equation = input("What is your equation? ex. x+3=5")
+    #         solution = sympy.solve(equation)
+    #         print(f"The answer is {solution}")
 
     def define():
         print("The following will be the choices of mathematics you can perform")
@@ -682,13 +679,12 @@ def code():
     print(
         "I would also like to mention that everything must be spelled correctly or I am no use to you"
     )
-    name = str(input("Whats your name? "))
-    print(f"Hi {name}!")
     print("By the way, I cannot calculate variables, only constants")
     print(
         "I would also like to mention that everything must be spelled correctly or I am no use to you"
     )
-    define()                                                                                
+    define()
+
 
 try:
     code()
