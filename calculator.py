@@ -676,10 +676,7 @@ def code():
     print(
         "Hi, I am an AI Calculator who can calculate extreme numbers. Feel free to enter any number you like!"
     )
-    print(
-        "I would also like to mention that everything must be spelled correctly or I am no use to you"
-    )
-    print("By the way, I cannot calculate variables, only constants")
+    print("I cannot calculate variables, only constants")
     print(
         "I would also like to mention that everything must be spelled correctly or I am no use to you"
     )
